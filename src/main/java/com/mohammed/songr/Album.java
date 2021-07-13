@@ -1,13 +1,24 @@
 package com.mohammed.songr;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String title;
     private String artist;
     private int songCount;
     private long length;
     private String imageUrl;
+    public Album() {
 
+    }
     public Album(String title, String artist, int songCount, long length, String imageUrl) {
         this.title = title;
         this.artist = artist;
@@ -54,5 +65,9 @@ public class Album {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
