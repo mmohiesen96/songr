@@ -13,7 +13,7 @@ public class MainController {
     private AlbumRepository albumRepository;
 
 
-    @GetMapping("/hello")
+    @RequestMapping(value = "/hello" , method = RequestMethod.GET)
     String getGreeting(@RequestParam(name="name", required = false, defaultValue = "World") String name , Model userName) {
         userName.addAttribute("name" , name);
         return "welcome";
