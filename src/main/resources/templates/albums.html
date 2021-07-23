@@ -4,9 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
   <title>Title</title>
 </head>
 <body>
+<nav class="navbar">
+  <a class="brand" href="/">Songr</a>
+  <ul>
+    <li>
+      <a href="/hello">Greeting</a>
+    </li>
+    <li>
+      <a active href="/capitalize/this word">Capitalize</a>
+    </li>
+    <li>
+      <a href="/albums">Albums</a>
+    </li>
+    <li>
+      <a href="/songs">Songs</a>
+    </li>
+    <li>
+      <a href="/addalbum">Add Album</a>
+    </li>
+    <li>
+      <a href="/addsong">Add Song</a>
+    </li>
+  </ul>
+</nav>
 <h1>Albums</h1>
   <div class="albums" th:each="album : ${album}">
     <div class="album">
@@ -15,7 +40,13 @@
     <p>Songs Count: <span th:text=${album.songCount}></span></p>
     <p>Album Length: <span th:text=${album.length}></span></p>
     <img th:src=${album.imageUrl} src="">
+      <div th:each="song : ${album.songs}">
+        <p th:text="${song.title}  + ' ' +  ${song.trackNumber} "  >
+
+        </p>
+      </div>
     </div>
+
   </div>
 
 </body>
