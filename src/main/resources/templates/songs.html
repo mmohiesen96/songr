@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="./css/style.css" th:href="@{/css/style.css}">
 
 </head>
 <body>
@@ -30,6 +30,15 @@
         </li>
     </ul>
 </nav>
-<p th:text="'Hello  ' + ${name} + '!'"></p>
+<ul th:each="song : ${song}">
+    <li th:text=${song.title}>
+    </li>
+    <li th:text=${song.trackNumber}>
+    </li>
+    <li th:text=${song.length}>
+    </li>
+    <li th:text=${song.album.title}>
+    </li>
+</ul>
 </body>
 </html>

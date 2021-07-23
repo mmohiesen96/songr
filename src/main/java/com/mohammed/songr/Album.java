@@ -1,11 +1,10 @@
 package com.mohammed.songr;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "album")
 public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +15,8 @@ public class Album {
     private int songCount;
     private long length;
     private String imageUrl;
+    @OneToMany(mappedBy = "album" , cascade = CascadeType.ALL)
+    private List<Song> songs;
     public Album() {
 
     }
@@ -25,6 +26,18 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     public void setTitle(String title) {

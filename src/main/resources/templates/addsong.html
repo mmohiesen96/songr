@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Add Album</title>
+  <title>Add Song</title>
   <link rel="stylesheet" th:href="@{/css/form.css}">
   <link rel="stylesheet" th:href="@{/css/style.css}">
 
@@ -27,23 +27,20 @@
   </ul>
 </nav>
 <div class="container">
-  <form id="contact" action="/albums" method="post">
-    <h3>Add Album</h3>
-    <h4>Here you can add your album</h4>
+  <form id="contact" action="/songs" method="post">
+    <h3>Add Song</h3>
+    <h4>Here you can add new song</h4>
     <fieldset>
-      <input placeholder="Album Title" type="text" tabindex="1" name="title" autofocus>
+      <input placeholder="Song Title" type="text" tabindex="1" name="title" autofocus>
     </fieldset>
     <fieldset>
-      <input placeholder="Artist" type="text" tabindex="2" name="artist">
+      <input placeholder="Length" type="text" tabindex="2" name="length">
     </fieldset>
     <fieldset>
-      <input placeholder="Song Count" type="number" tabindex="3" name="songCount">
+      <input placeholder="Track Number" type="number" tabindex="3" name="trackNumber">
     </fieldset>
     <fieldset>
-      <input placeholder="Length of album in seconds" type="number" tabindex="4" name="length" >
-    </fieldset>
-    <fieldset>
-      <input placeholder="Album image url" type="text" tabindex="4" name="imageUrl">
+      <input placeholder="Album id" type="number" tabindex="4" name="album_id" >
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
